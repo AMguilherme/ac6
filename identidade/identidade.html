@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cadastro</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="ac6.css">
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="icon" href="index.png" type="image/x-png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+
+
+            function validar() {
+                var login = newuser.login.value;
+                var nome = newuser.nome.value;
+                var email = newuser.email.value;
+                var nascimento = newuser.nascimento.value;
+                var senha = newuser.senha.value;
+                var csenha = newuser.csenha.value;
+
+                if (login == ""){
+                    alert ("Preencha o campo 'Login'");
+                    newuser.login.focus();
+                    return false
+                }
+                if (nome == ""){
+                    alert ("Preencha o campo 'Nome'");
+                    newuser.nome.focus();
+                    return false
+                }
+                if (nome.indexOf(' ') == -1){
+                    alert ("Preencha o campo 'Nome' corretamente");
+                    newuser.nome.focus();
+                    return false
+                }
+                if (email == ""){
+                    alert ("Preencha o campo 'Email'");
+                    newuser.email.focus();
+                    return false
+                }
+                if (email.indexOf('@') == -1){
+                    alert ("Preencha o campo 'Email' corretamente");
+                    newuser.email.focus();
+                    return false
+                }
+                if (senha == ""){
+                    alert ("Preencha o campo 'Senha'");
+                    newuser.senha.focus();
+                    return false
+                }
+                if (csenha != senha){
+                    alert ("As senhas nao sao compativeis");
+                    newuser.login.focus();
+                } 
+
+
+            }
+        </script>
+    </head>
+    <header>
+
+        <h1>Faculdade Impacta</h1><br/>
+        <nav>
+            <div class="imagem-aluno">
+                <img src="img1.png" alt="Aluno Impacta" />
+                <img src="img2.png" alt="Aluno Impacta" />
+                <img src="img3.png" alt="Aluno Impacta" />
+                <img src="img4.png" alt="Aluno Impacta" />
+            </div>
+            <a href="http://impacta.edu.br">Mais Informacôes</a>
+        </nav>
+    </header>
+    <body>
+
+
+
+        <br/><br/>
+
+        <a href="http://localhost:63342/untitled/logado.html">Login</a>
+        <h2>Cadastrar novo Aluno</h2>
+        <form name="newuser" action="" method="POST">
+            Login:<input type="text" name="login" maxlength="15" placeholder="Usuário" ><br/><br/>
+            Nome:<input type="text" name="nome" placeholder="Nome e Sobrenome" maxlength="50" ><br/><br/>
+            E-mail:<input type="email" name="email" placeholder="exemplo@gmail.com" maxlength="25" required><br/><br/>
+            Celular:<input type="text" name="celular" placeholder="(xx)99999-9999" maxlength="11" ><br/><br/>
+            Data de Nascimento:<input type="date" name="nascimento" required><br/><br/>
+            CPF:<input type="text" name="cpf" size="11" maxlength="11" ><br/><br/>
+            Senha:<input type="password" name="senha" size="15" maxlength="20" placeholder="máximo 20 caracteres" ><br/><br/>
+            Confirmar senha:<input type="password" name="csenha" size="15" maxlength="20" ><br/><br/>
+            <input type="submit" value="Enviar" onclick="return validar()">
+        </form>
+
+    </body>
+    <br/>
+    <br/>
+    <footer>
+        <nav>
+            <a href="http://impacta.edu.br">Mais Informacôes</a>
+        </nav>
+    </footer>
+</html>
